@@ -31,7 +31,6 @@ def error_404(error):
     """ this Handles the 404 HTTP error code."""
     return jsonify(error='Not found'), 404
 
-
 @app.errorhandler(400)
 def error_400(error):
     """ this Handles the 400 HTTP error code."""
@@ -39,7 +38,6 @@ def error_400(error):
     while isinstance(error, Exception) and hasattr(error, 'description'):
         msg = error.description
     return jsonify(error=msg), 400
-
 
 if __name__ == '__main__':
     app.run(host=app_host, port=app_port, threaded=True)
